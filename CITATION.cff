@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite this software repository."
+title: "DMADSAC: Article 2 Reproducibility Package"
+type: software
+authors:
+  - family-names: "Osmanpour"
+    given-names: "Mohammad Shovan"
+version: "1.0.0"
+date-released: 2026-10-16
+repository-code: "https://github.com/msosmanpour/DMADSAC"
+url: "https://github.com/msosmanpour/DMADSAC"
+license: BSD-3-Clause
+abstract: >
+  Curated reproducibility package for a paired five-seed, 330-day
+  study-planning simulation comparing Dynamic-DSAC, Static-DSAC,
+  and a transparent Memory-Aware Urgency heuristic.
+keywords:
+  - reinforcement learning
+  - discrete soft actor-critic
+  - study planning
+  - learning technologies
+  - reproducibility
+  - memory-aware urgency
