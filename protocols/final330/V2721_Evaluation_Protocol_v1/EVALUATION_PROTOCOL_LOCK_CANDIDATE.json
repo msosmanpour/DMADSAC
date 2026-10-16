@@ -1,0 +1,22 @@
+{
+  "name": "V27.2.1 Evaluation Protocol v1",
+  "status": "LOCK-CANDIDATE",
+  "scheduler_code_change": false,
+  "primary_outcome": "equal_book_expected_recall_score",
+  "primary_scope": "anchor",
+  "books_per_user": 9,
+  "questions_per_book": 10,
+  "satisfaction_used": false,
+  "existing_exam_rows_used_for_standardized_primary": false,
+  "unstudied_content_recall": 0,
+  "primary_noise": false,
+  "equal_book_weight": true,
+  "paired_question_pages": true,
+  "paired_secondary_random_numbers": true,
+  "required_gates": [
+    "5-user read-only technical test",
+    "100-user 30-day",
+    "100-user 60-day",
+    "100-user 330-day final"
+  ]
+}

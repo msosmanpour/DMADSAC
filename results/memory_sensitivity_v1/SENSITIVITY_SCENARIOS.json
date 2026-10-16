@@ -1,0 +1,93 @@
+[
+  {
+    "name": "LOCKED",
+    "hscale": 1.0,
+    "shape": 1.0,
+    "ew": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "rh": 0.3,
+    "vh": 0.25
+  },
+  {
+    "name": "SHORT_RETENTION_0p5x",
+    "hscale": 0.5,
+    "shape": 1.0,
+    "ew": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "rh": 0.3,
+    "vh": 0.25
+  },
+  {
+    "name": "LONG_RETENTION_2x",
+    "hscale": 2.0,
+    "shape": 1.0,
+    "ew": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "rh": 0.3,
+    "vh": 0.25
+  },
+  {
+    "name": "LONG_TAIL_SHAPE_0p75",
+    "hscale": 1.0,
+    "shape": 0.75,
+    "ew": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "rh": 0.3,
+    "vh": 0.25
+  },
+  {
+    "name": "STEEP_TAIL_SHAPE_1p25",
+    "hscale": 1.0,
+    "shape": 1.25,
+    "ew": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "rh": 0.3,
+    "vh": 0.25
+  },
+  {
+    "name": "LOW_REPETITION_REVIEW",
+    "hscale": 1.0,
+    "shape": 1.0,
+    "ew": [
+      0.65,
+      0.2,
+      0.1,
+      0.05
+    ],
+    "rh": 0.15,
+    "vh": 0.125
+  },
+  {
+    "name": "HIGH_REPETITION_REVIEW",
+    "hscale": 1.0,
+    "shape": 1.0,
+    "ew": [
+      0.35,
+      0.2,
+      0.3,
+      0.15
+    ],
+    "rh": 0.45,
+    "vh": 0.375
+  }
+]

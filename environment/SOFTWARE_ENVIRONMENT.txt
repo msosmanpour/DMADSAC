@@ -1,0 +1,6 @@
+﻿Python=3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]
+Platform=Windows-11-10.0.26200-SP0
+Django=5.1.4
+NumPy=2.0.2
+pandas=2.2.3
+TensorFlow=2.20.0

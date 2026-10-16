@@ -1,0 +1,33 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ML checkpoints
+*.ckpt
+*.h5
+*.keras
+*.pkl
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.bak
+*.log
