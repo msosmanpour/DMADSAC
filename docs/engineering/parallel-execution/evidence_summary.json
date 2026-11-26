@@ -1,0 +1,15 @@
+{
+  "source_kind": "validated archived process receipts, not replayed or synthesized performance measurements",
+  "archive_v35_sha256": "5D95A63012F553D933F594ECB23C94B6C45038F50DA142600045EEE857C36D50",
+  "archive_v41_sha256": "BA3A0A70EA9A4006B097980EB38C6BE32CBAD20D4C15E4F1807B74026490F233",
+  "orchestrator_source_zip_sha256": "3D0C6CA4CF20072D366F89F074AAEAAF70DD65F96E38CE12E8650339749DDB87",
+  "orchestrator_python_sha256": "DBCCB97F4E0B535F0920394D17BADB90EAC5E4B8EA767E89328E74AF575BCFF6",
+  "verified_records": 12,
+  "verified_method_seeds": 3,
+  "heuristic_max_overlapping_processes": 4,
+  "dsac_max_overlapping_processes": 1,
+  "v35_seed2_mau_earliest_overlap_hours": 4.8671,
+  "v41_status": "PASS_SEEDS3_TO5_ALL12_METHODS_CANDIDATE",
+  "official_study_status_field": false,
+  "note": "Performance durations are actual recorded elapsed time, not a controlled serial-vs-parallel speedup experiment."
+}

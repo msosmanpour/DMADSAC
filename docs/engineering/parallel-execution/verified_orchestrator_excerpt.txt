@@ -1,0 +1,42 @@
+ORIGINAL SOURCE: ARTICLE2_V41_MULTI_SEED_FINAL.py
+SHA256: DBCCB97F4E0B535F0920394D17BADB90EAC5E4B8EA767E89328E74AF575BCFF6
+Lines 241–278 from pinned source archive; reference excerpt, not standalone runnable program.
+
+0241:         tasks=[]
+0242:         for seed in SEEDS:
+0243:             sr=runroot/('SEED_'+str(seed))
+0244:             for method in ('MAU','EarliestDue'):
+0245:                 got=verify_completed(sr,seed,method)
+0246:                 if got:status['methods'][str(seed)][method]='COMPLETE_REUSED'
+0247:                 else:tasks.append((seed,method))
+0248:         free=(v19.hardware().get('available_ram_bytes') or 0)
+0249:         workers=min(max_workers,4) if free>=3*GIB and (v19.hardware().get('logical_cpu_count') or 0)>=4 else 1
+0250:         say('HEURISTIC_WORKERS='+str(workers)+'|AVAILABLE_GiB='+str(round(free/GIB,2)))
+0251:         # A failure never silently triggers rerunning a partial project.
+0252:         with ThreadPoolExecutor(max_workers=workers) as pool:
+0253:             futures={pool.submit(run_full,runroot/('SEED_'+str(seed)),seed,method):(seed,method) for seed,method in tasks}
+0254:             errors=[]
+0255:             for fut in as_completed(futures):
+0256:                 seed,method=futures[fut];sr=runroot/('SEED_'+str(seed))
+0257:                 try:
+0258:                     proc=fut.result();result=audit_full(sr,seed,method,proc)
+0259:                     status['methods'][str(seed)][method]='COMPLETE'
+0260:                 except Exception as e:
+0261:                     status['methods'][str(seed)][method]='FAILED_PRESERVE_FOR_INSPECTION';errors.append((seed,method,repr(e)))
+0262:                 portable_report(root,runroot,status)
+0263:         need(not errors,'HEURISTIC_FAILURES_'+str(errors))
+0264:         # Isolated RL agents are NEVER co-scheduled due to measured 7.9-9.1GB RSS.
+0265:         for seed in SEEDS:
+0266:             sr=runroot/('SEED_'+str(seed))
+0267:             for method in ('Dynamic','Static'):
+0268:                 got=verify_completed(sr,seed,method)
+0269:                 if got:
+0270:                     status['methods'][str(seed)][method]='COMPLETE_REUSED';continue
+0271:                 free=(v19.hardware().get('available_ram_bytes') or 0)/GIB
+0272:                 say('DSAC_ADMISSION|seed='+str(seed)+'|'+method+'|free_GiB='+str(round(free,2)))
+0273:                 need(free>=3,'DSAC_INSUFFICIENT_RAM_AT_START_'+method)
+0274:                 need(shutil.disk_usage(root).free>=4*GIB,'DISK_RESERVE_FOR_DSAC')
+0275:                 proc=run_full(sr,seed,method);audit_full(sr,seed,method,proc)
+0276:                 status['methods'][str(seed)][method]='COMPLETE';portable_report(root,runroot,status)
+0277:         # Cross-method paired experiment common question bank/pre assessment inside each seed.
+0278:         for seed in SEEDS:
